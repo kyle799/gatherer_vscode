@@ -1,7 +1,14 @@
 import requests, json, yaml
+import os
 
 with open('extensions.txt') as f:
     extensions = f.read().splitlines()
+
+if not os.path.exists('extensions'):
+    os.makedirs('extensions')
+
+if not os.path.exists('errors'):
+    os.makedirs('errors')
 
 def download_vscode_extension(extension_id, version='latest'):
     url = f"https://marketplace.visualstudio.com/_apis/public/gallery/publishers/{extension_id.split('.')[0]}/vsextensions/{extension_id.split('.')[1]}/{version}/vspackage"
