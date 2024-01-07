@@ -1,4 +1,4 @@
-import requests, json, yaml
+import requests
 import os
 
 with open('extensions.txt') as f:
