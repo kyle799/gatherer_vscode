@@ -1,5 +1,4 @@
-import requests
-import os
+import requests, os
 
 with open('extensions.txt') as f:
     extensions = f.read().splitlines()
